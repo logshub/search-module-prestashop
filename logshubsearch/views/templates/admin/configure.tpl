@@ -14,25 +14,27 @@
 *}
 
 <div class="panel">
-	<h3><i class="icon icon-credit-card"></i> {l s='LogsHub.com Search' mod='logshubsearch'}</h3>
+	<h3><i class="icon icon-tags"></i> {l s='General Info' mod='logshubsearch'}</h3>
 	<p>
-		<strong>{l s='Here is my new generic module!' mod='logshubsearch'}</strong><br />
-		{l s='Thanks to PrestaShop, now I have a great module.' mod='logshubsearch'}<br />
-		{l s='I can configure it using the following configuration form.' mod='logshubsearch'}
+		{l s='PrestaShop plugin to show search box suggestions for your customers, integrated with LogsHub.com API.' mod='logshubsearch'}
 	</p>
-	<br />
-	<p>
-		{l s='This module will boost your sales!' mod='logshubsearch'}
-	</p>
-</div>
 
-<div class="panel">
-	<h3><i class="icon icon-tags"></i> {l s='Documentation' mod='logshubsearch'}</h3>
+	<p>{l s='Why search suggestions are important for your store?' mod='logshubsearch'}</p>
+	<ul>
+		<li>{l s='Improved conversions' mod='logshubsearch'}</li>
+		<li>{l s='Customer engagement' mod='logshubsearch'}</li>
+		<li>{l s='Better user experience' mod='logshubsearch'}</li>
+	</ul>
+
+	<p>{l s='Useful Links:' mod='logshubsearch'}</p>
+	<ul>
+		<li><a href="https://www.logshub.com/" target="_blank">{l s='LogsHub.com' mod='logshubsearch'}</a></li>
+		<li><a href="https://app.logshub.com/openautomation/service/index/" target="_blank">{l s='LogsHub.com Dashboard' mod='logshubsearch'}</a></li>
+		<li><a href="https://www.logshub.com/docs/search-prestashop.html" target="_blank">{l s='Docs' mod='logshubsearch'}</a></li>
+		<li><a href="https://github.com/logshub/search-module-prestashop/tree/master/logshubsearch" target="_blank">{l s='Source code' mod='logshubsearch'}</a></li>
+	</ul>
+
 	<p>
-		&raquo; {l s='You can get a PDF documentation to configure this module' mod='logshubsearch'} :
-		<ul>
-			<li><a href="#" target="_blank">{l s='English' mod='logshubsearch'}</a></li>
-			<li><a href="#" target="_blank">{l s='French' mod='logshubsearch'}</a></li>
-		</ul>
+		{l s='Do not forget to run Ecommerce-Synch tool to synchronize products and categories with LogsHub.com API.' mod='logshubsearch'}
 	</p>
 </div>

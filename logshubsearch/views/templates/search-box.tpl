@@ -31,6 +31,7 @@ window.addEventListener('load', function () {
       categoryLimit: LhDefault.categoryLimit,
       defaultCurrency: LhDefault.currency,
       features: LhDefault.features,
+      startupQuery: LhDefault.startupQuery,
       onSubmit: function(event){
         var query = (event.currentTarget.getElementsByClassName('tt-input')[0] || {}).value;
         window.location.href = '/search?controller=search&s=' + query;
@@ -82,4 +83,9 @@ window.addEventListener('load', function () {
         </div>
     </div>
 </script>
+<style type="text/css">
+.search-widget form button[type="submit"] {
+  position: static !important;
+}
+</style>
 {/literal}

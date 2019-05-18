@@ -6,6 +6,11 @@ Features:
 - View admin configuration
 - Search box on frontend
 
+### Data Synchronization
+
+This plugin only shows a search box integrated with the API. Use https://github.com/logshub/ecommerce-synch
+project to synchronize products and categories data with LogsHub.com search API.
+
 ### Installation
 
 ...
