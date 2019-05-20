@@ -129,7 +129,7 @@ class Logshubsearch extends Module
                         'label' => $this->l('Live mode'),
                         'name' => 'LOGSHUBSEARCH_LIVE_MODE',
                         'is_bool' => true,
-                        'desc' => $this->l('Use this module in live mode'),
+                        'desc' => $this->l('Turn this module on/off'),
                         'values' => [
                             ['id' => 'active_on', 'value' => true, 'label' => $this->l('Enabled')],
                             ['id' => 'active_off', 'value' => false, 'label' => $this->l('Disabled')]
@@ -144,6 +144,7 @@ class Logshubsearch extends Module
                         'type' => 'text',
                         'name' => 'LOGSHUBSEARCH_API_PUBLIC_KEY',
                         'label' => $this->l('API public key'),
+                        'desc' => $this->l('You can find it on your LogsHub.com dashboard'),
                     ],
                     [
                         'type' => 'text',
@@ -164,6 +165,7 @@ class Logshubsearch extends Module
                         'type' => 'text',
                         'name' => 'LOGSHUBSEARCH_CONTAINER',
                         'label' => $this->l('Container selector'),
+                        'desc' => $this->l('CSS selector of your search box container. It will be replaced by this module. Contact us if you do not know what to pass here. We can help.'),
                     ],
                     [
                         'type' => 'switch',
@@ -179,6 +181,7 @@ class Logshubsearch extends Module
                         'type' => 'text',
                         'name' => 'LOGSHUBSEARCH_STARTUP_QUERY',
                         'label' => $this->l('Startup query'),
+                        'desc' => $this->l('Phrase that will be requested just after click on search box by your customer.'),
                     ],
                     [
                         'type' => 'text',
@@ -252,8 +255,8 @@ class Logshubsearch extends Module
             'pubKey' => Configuration::get('LOGSHUBSEARCH_API_PUBLIC_KEY'),
             'container' => Configuration::get('LOGSHUBSEARCH_CONTAINER'),
             'fullscreen' => Configuration::get('LOGSHUBSEARCH_FULLSCREEN'),
-            'limit' => Configuration::get('LOGSHUBSEARCH_LIMIT', 18),
-            'categoryLimit' => Configuration::get('LOGSHUBSEARCH_CAT_LIMIT', 10),
+            'limit' => (int)Configuration::get('LOGSHUBSEARCH_LIMIT', 18),
+            'categoryLimit' => (int)Configuration::get('LOGSHUBSEARCH_CAT_LIMIT', 10),
             'features' => Configuration::get('LOGSHUBSEARCH_FEATURES'),
             'startupQuery' => Configuration::get('LOGSHUBSEARCH_STARTUP_QUERY'),
             'currency' => Configuration::get('LOGSHUBSEARCH_DEFAULT_CURRENCY'),

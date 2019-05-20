@@ -32,6 +32,7 @@
 		<li><a href="https://app.logshub.com/openautomation/service/index/" target="_blank">{l s='LogsHub.com Dashboard' mod='logshubsearch'}</a></li>
 		<li><a href="https://www.logshub.com/docs/search-prestashop.html" target="_blank">{l s='Docs' mod='logshubsearch'}</a></li>
 		<li><a href="https://github.com/logshub/search-module-prestashop/tree/master/logshubsearch" target="_blank">{l s='Source code' mod='logshubsearch'}</a></li>
+		<li><a href="https://github.com/logshub/ecommerce-synch" target="_blank">{l s='Ecommerce-Synch' mod='logshubsearch'}</a></li>
 	</ul>
 
 	<p>

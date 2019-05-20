@@ -4,15 +4,15 @@
 <script type="text/javascript">
 var LhDefault = {
     {/literal}
-    'domain': '{$domain}',
-    'pubKey': '{$pubKey}',
-    'container': '{$container}',
-    'fullscreen': {$fullscreen},
+    'domain': '{$domain|escape:'html'}',
+    'pubKey': '{$pubKey|escape:'html'}',
+    'container': '{$container|escape:'html'}',
+    'fullscreen': {$fullscreen|escape:'html'},
     'limit': {$limit},
     'categoryLimit': {$categoryLimit},
-    'features': '{$features}',
-    'startupQuery': '{$startupQuery}',
-    'currency': '{$currency}'
+    'features': '{$features|escape:'html'}',
+    'startupQuery': '{$startupQuery|escape:'html'}',
+    'currency': '{$currency|escape:'html'}'
     {literal}
 };
 
