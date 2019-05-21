@@ -16,6 +16,7 @@ project to synchronize products and categories data with LogsHub.com search API.
 * PHP 5.6+, 7+
 * PrestaShop 1.6.1.11 - 1.7.5.1
 
+It is recommended to install this plugin on your test envifonment firstly.
 Other versions might work as well, but was not tested.
 
 ### Installation

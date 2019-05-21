@@ -1,18 +1,19 @@
 <?php
 /**
-* DISCLAIMER
-*
-* THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-* DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-* ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
-* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*
-*  @author    LogsHub.com <sales@logshub.com>
-*  @copyright 2019 LogsHub.com
-*/
+ * @author    LogsHub.com <sales@logshub.com>
+ * @copyright 2019 LogsHub.com
+ * @license   MIT
+ *
+ * DISCLAIMER
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -39,6 +40,7 @@ class Logshubsearch extends Module
 
         $this->displayName = $this->l('LogsHub.com Search');
         $this->description = $this->l('Turn your search box into next level.');
+        $this->module_key = '6b8451b3224c7d279e7cfdef5da49a08';
 
         $this->ps_versions_compliancy = [
             'min' => '1.6',
@@ -165,7 +167,9 @@ class Logshubsearch extends Module
                         'type' => 'text',
                         'name' => 'LOGSHUBSEARCH_CONTAINER',
                         'label' => $this->l('Container selector'),
-                        'desc' => $this->l('CSS selector of your search box container. It will be replaced by this module. Contact us if you do not know what to pass here. We can help.'),
+                        'desc' => $this->l('CSS selector of your search box container. '.
+                            'It will be replaced by this module. '.
+                            'Contact us if you do not know what to pass here. We can help.'),
                     ],
                     [
                         'type' => 'switch',
@@ -181,7 +185,8 @@ class Logshubsearch extends Module
                         'type' => 'text',
                         'name' => 'LOGSHUBSEARCH_STARTUP_QUERY',
                         'label' => $this->l('Startup query'),
-                        'desc' => $this->l('Phrase that will be requested just after click on search box by your customer.'),
+                        'desc' => $this->l('Phrase that will be requested '.
+                            'just after click on search box by your customer.'),
                     ],
                     [
                         'type' => 'text',
@@ -214,22 +219,22 @@ class Logshubsearch extends Module
             'LOGSHUBSEARCH_DEFAULT_CURRENCY' => Configuration::get('LOGSHUBSEARCH_DEFAULT_CURRENCY'),
         ];
 
-        if (empty($default['LOGSHUBSEARCH_API_DOMAIN'])){
+        if (empty($default['LOGSHUBSEARCH_API_DOMAIN'])) {
             $default['LOGSHUBSEARCH_API_DOMAIN'] = 'uk01.apisearch.logshub.com';
         }
-        if (empty($default['LOGSHUBSEARCH_LIMIT'])){
+        if (empty($default['LOGSHUBSEARCH_LIMIT'])) {
             $default['LOGSHUBSEARCH_LIMIT'] = 18;
         }
-        if (empty($default['LOGSHUBSEARCH_CAT_LIMIT'])){
+        if (empty($default['LOGSHUBSEARCH_CAT_LIMIT'])) {
             $default['LOGSHUBSEARCH_CAT_LIMIT'] = 10;
         }
-        if (empty($default['LOGSHUBSEARCH_FEATURES'])){
+        if (empty($default['LOGSHUBSEARCH_FEATURES'])) {
             $default['LOGSHUBSEARCH_FEATURES'] = 'products,categories,fullresponse';
         }
-        if (empty($default['LOGSHUBSEARCH_CONTAINER'])){
+        if (empty($default['LOGSHUBSEARCH_CONTAINER'])) {
             $default['LOGSHUBSEARCH_CONTAINER'] = '#search_widget';
         }
-        if (empty($default['LOGSHUBSEARCH_FULLSCREEN'])){
+        if (empty($default['LOGSHUBSEARCH_FULLSCREEN'])) {
             $default['LOGSHUBSEARCH_FULLSCREEN'] = true;
         }
 
@@ -262,7 +267,7 @@ class Logshubsearch extends Module
             'currency' => Configuration::get('LOGSHUBSEARCH_DEFAULT_CURRENCY'),
         ];
 
-        if (!Configuration::get('LOGSHUBSEARCH_LIVE_MODE') || !$variables['domain'] || !$variables['pubKey']){
+        if (!Configuration::get('LOGSHUBSEARCH_LIVE_MODE') || !$variables['domain'] || !$variables['pubKey']) {
             return;
         }
 
@@ -272,10 +277,10 @@ class Logshubsearch extends Module
         $this->context->controller->addJS($this->_path.'/views/js/logshub.js');
         $this->context->controller->addCSS($this->_path.'/views/css/logshub.min.css');
 
-        foreach ($variables as $k => $v){
+        foreach ($variables as $k => $v) {
             $this->context->smarty->assign($k, $v);
         }
 
-        return $this->context->smarty->fetch($this->local_path.'views/templates/search-box.tpl');
+        return $this->context->smarty->fetch($this->local_path.'views/templates/front/search-box.tpl');
     }
 }
